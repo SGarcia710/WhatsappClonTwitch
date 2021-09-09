@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@chatApp/*": ["src/*/index", "src/*"]
+    }
+  }
+}
