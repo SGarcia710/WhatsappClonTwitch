@@ -4,3 +4,4 @@ export {default as CameraScreen} from './Camera';
 export {default as SettingsScreen} from './Settings';
 export {default as SigninScreen} from './Signin';
 export {default as SignupScreen} from './Signup';
+export {default as ChatScreen} from './Chat';

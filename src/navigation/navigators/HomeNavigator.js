@@ -1,8 +1,11 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {CallsScreen, CameraScreen, ChatsScreen} from '@chatApp/screens';
+import {CallsScreen, CameraScreen} from '@chatApp/screens';
 import Settings from '@chatApp/screens/Settings';
 import AD from 'react-native-vector-icons/AntDesign';
+import COLORS from '@chatApp/commons/constants/colors';
+import {View} from 'react-native';
+import ChatsNavigator from './ChatsNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -49,9 +52,12 @@ const HomeNavigator = () => {
           },
           tabBarShowLabel: false,
           headerShown: false,
+          tabBarBackground: () => (
+            <View style={{backgroundColor: COLORS.background}} />
+          ),
         };
       }}>
-      <Tab.Screen name="Chats" component={ChatsScreen} />
+      <Tab.Screen name="Chats" component={ChatsNavigator} />
       <Tab.Screen name="Calls" component={CallsScreen} />
       <Tab.Screen name="Camera" component={CameraScreen} />
       <Tab.Screen name="Settings" component={Settings} />

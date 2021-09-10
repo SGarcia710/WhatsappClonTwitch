@@ -1181,6 +1181,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.7.5.tgz#67b16ba9f244e0c6387f1498bb4a36e2759f17da"
   integrity sha512-skpbmPJl2YvkS9eGuJ8mSnlr4sVjkMzPFi98kEAOuOTHmRB72/YXVqR72AS4HFBxvGJDIRtZJCeLm+Vc2Ngcrw==
 
+"@react-native-firebase/database@12.7.5":
+  version "12.7.5"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-12.7.5.tgz#f711aa9b932a7a9a33658f0c3f111dd0168beac2"
+  integrity sha512-uPGdcDvuZUp/Wjk1yWBbU4eUJDHov707IPhAYhrt1HuIumC20If3zwDH295HmZo8bMIW4B3tSQAhV9ijdf1U0g==
+
 "@react-native/assets@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets/-/assets-1.0.0.tgz#c6f9bf63d274bafc8e970628de24986b30a55c8e"
