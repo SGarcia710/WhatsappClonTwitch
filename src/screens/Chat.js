@@ -22,6 +22,7 @@ const Chat = props => {
   const user = useAuthStore(userSelector);
   const input = useRef(null);
   const params = props.route.params;
+  const scrollView = useRef(null);
 
   const {
     register,
@@ -30,6 +31,9 @@ const Chat = props => {
     setValue,
     reset,
   } = useForm();
+
+  // https://reactnative.dev/docs/keyboard
+  // Con esto se podria hacer scroll hacia abajo cuando abramos el keyboard
 
   const {messages, sendMessage} = useChat();
   const onSendMessage = handleSubmit((data, e) => {
@@ -87,7 +91,15 @@ const Chat = props => {
           </View>
         </View>
         {/* MESSAGES */}
-        <ScrollView style={styles.messagesContainer}>
+        <ScrollView
+          contentContainerStyle={{
+            paddingTop: 24,
+          }}
+          ref={scrollView}
+          onContentSizeChange={() =>
+            scrollView.current?.scrollToEnd({animated: true})
+          }
+          style={styles.messagesContainer}>
           {React.Children.toArray(
             Object.values(messages).map(message => (
               <View
@@ -143,7 +155,6 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     width: '100%',
-    marginBottom: 24,
     paddingBottom: 12,
     borderBottomColor: COLORS.gray,
     borderBottomWidth: 0.5,
