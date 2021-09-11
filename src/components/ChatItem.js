@@ -5,9 +5,14 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 
 const ChatItem = () => {
   const navigation = useNavigation();
+  const user = {
+    name: 'Emilia Clark',
+    avatar:
+      'https://images.pexels.com/photos/4577583/pexels-photo-4577583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  };
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Chat')}
+      onPress={() => navigation.navigate('Chat', {user})}
       style={{
         flexDirection: 'row',
         alignItems: 'center',
@@ -29,7 +34,7 @@ const ChatItem = () => {
             borderRadius: 54 / 2,
           }}
           source={{
-            uri: 'https://images.pexels.com/photos/4577583/pexels-photo-4577583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            uri: user.avatar,
           }}
         />
       </View>
@@ -41,7 +46,7 @@ const ChatItem = () => {
             marginBottom: 4,
           }}
           numberOfLines={1}>
-          Emilia Clark
+          {user.name}
         </Text>
         <Text
           style={{

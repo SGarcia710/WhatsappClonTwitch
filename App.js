@@ -1,3 +1,4 @@
+import 'react-native-get-random-values';
 import React from 'react';
 import Navigation from '@chatApp/navigation';
 
